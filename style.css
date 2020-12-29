@@ -1,0 +1,140 @@
+﻿*{ /*lo stile di defautl*/
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.main {
+	/*width: 100vw;*/
+	height: 100vh; /*riempe lo schermo verticalmente*/
+	position: relative; /*rimuove la barra di scroll verticale perchè posiziona il main da 0,0 (default)*/
+	overflow: hidden;
+	background: linear-gradient(to right, #9c27b0, #8ecdff)
+}
+nav {
+	width: 80%; /*occupa 80% della larghezza della finestra*/
+	position: sticky; /*indipendentemente da scroll nav rimmarà al suo posto*/
+	margin: 20px auto;
+	z-index: 1;
+	display: flex; /*il contenuto è organizzato in boxes(scatole)*/
+	align: center;
+}
+.logo {
+	flex-basis: 20px;/*definisce le dimendioni del box contenente il logo*/
+}
+.logo img {
+	width: 150px;
+}
+.nav-links {
+	flex: 1; /*forza ogni link occupi lo stesso spazio indipendentemente dalla lunghzza*/
+	text-align: right;
+}
+.nav-links ul li{
+	list-style: none;
+	display: inline-block;/*in questo modo flexbox mette ogni link in un box separato*/
+	margin: 0 20px;
+}
+.nav-links ul li a{
+	color: #fff;
+	text-decoration: none; /*toglie il link sottolineato*/
+}
+.information{ /*un trucco per centrare la sezione verticalmente*/
+	width: 500px;  /*così che posso centrare la sezione*/
+	height: 500px;
+	position: absolute;/*così che posso centrare la sezione*/
+	top: 50%; /*questa sequenza mi permette di centrare la sezione verticalmente*/
+	transform: translateY(-50%);
+	left: -10%; /*sposta la sezione a sinistra di 10% della larghezza*/
+	/*background-color: orange;*/
+
+}
+#circle{
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	top: 0;
+	left: 0%;
+	border-radius: 50%; /*genera il cerchio*/
+	/*background: #ccc;*/
+	transform: rotate(360deg);
+	transition: 1s;
+}
+.feature {
+	position: absolute;
+	display: flex;
+	color: #fff;
+}
+.feature div{
+	margin: 20px 1px 1px 1px;
+	/*background-color: orange;*/
+}
+.feature img {
+	width: 44px;
+}
+.feature div h1{
+	font-size: 1em;
+	/*background-color: red;*/
+}
+.feature div span{
+	font-size: 0.7em;
+	/*background-color: blue;*/
+}
+
+.camera{
+	transform: translateX(50%);
+	top: 209px;
+	right: -38px;
+}
+.processor{
+	transform: rotate(-90deg);
+	top: -100px;
+	left: 140px;
+}
+.display{
+	transform: rotate(-180deg);
+	bottom: 222px;
+	left : -187px;
+}
+.battery{
+	transform: rotate(-270deg);
+	bottom: -109px;
+	left: 131px;
+}
+.mobile{
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 40%;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+.controls{
+	position: absolute;
+	left:4%;
+	top: 50%; /*centra verticalmente 1/2 */
+	transform: translateY(-50%); /*centra verticalmente 2/2 */
+	text-align: center;
+}
+.controls h3{
+	margin: 1px 0;
+	color: #fff;
+}
+#upBtn{
+	width: 15px;
+	cursor: pointer;
+	transform: rotate(-90deg);
+}
+#downBtn{
+	width: 15px;
+	cursor: pointer;
+	transform: rotate(90deg);
+}
+.overlay{
+	width: 0; /*mettendo 0 per entrambi le dimensioni si ottiene l'effetto a raggi*/
+	height: 0;
+	border-top: 250px solid purple; /*spicchio in alto*/
+	border-right: 250px solid transparent; /*spicchio a destra*/
+	border-bottom: 250px solid purple;
+	border-left: 250px solid purple;
+	position: absolute; /*altrimenti z-index non funzionerebbe (con static che è defautl)*/
+	z-index: 1; /*foreground*/
+}

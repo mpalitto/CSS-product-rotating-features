@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Rotating Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo"><!--img src="images/logo.png"--></div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="information">
+            <div class="overlay"></div>
+            <img src="images/mobile.png" class="mobile">
+            <div id="circle">
+                <div class="feature camera">
+                    <img src="images/camera.png">
+                    <div><h1>Camera</h1><span>12MP, Wide Angle Lens</span></div>
+                </div>
+                <div class="feature processor">
+                    <img src="images/processor.png">
+                    <div><h1>Processor</h1><p>Spangton Octa-core 11nm</p></div>
+                </div>
+                <div class="feature display">
+                    <img src="images/display.png">
+                    <div><h1>Display</h1><p>6.8" Mini-Drop Fullscreen</p></div>
+                </div>
+                <div class="feature battery">
+                    <img src="images/battery.png">
+                     <div><h1>Battery</h1><p>5000mAh, 720Hrs Satandby</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <dic class="controls">
+        <img src="images/arrow.png" id="upBtn">
+        <h3>Features</h3>
+        <img src="images/arrow.png" id="downBtn">
+    </div>
+    <script>
+        var circle = document.getElementById("circle");
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+
+        var rotateValue = 0;
+        var rotateSum = 360;
+        setTimeout(function(){
+            circle.style.transform = "rotate(360deg)";
+            circle.style = "transition: 0s";
+            circle.style = "transition: 1s";
+        }, 2000);
+
+        upBtn.onclick = function() {
+            rotateSum -= 90;
+            console.log("UP) value: "+ rotateValue+" sum:"+rotateSum);
+            circle.style.transform = "rotate("+rotateSum+"deg)";
+            if(rotateSum == 720){
+                setTimeout(function(){
+                    circle.style = "transition: none";
+                    circle.style.transform = "rotate(360deg)";
+                    rotateSum = 360;
+                    setTimeout(function(){
+                        circle.style = "transition: 1s";
+                     }, 100);  
+                }, 800);
+
+            }
+        }
+        downBtn.onclick = function() {
+            rotateSum += 90;
+            console.log("DOWN) value: "+ rotateValue+" sum:"+rotateSum);
+            circle.style.transform = "rotate("+rotateSum+"deg)";
+            if(rotateSum == 0){
+                setTimeout(function(){
+                    circle.style = "transition: none";
+                    circle.style.transform = "rotate(360deg)";
+                    rotateSum = 360;
+                    setTimeout(function(){
+                        circle.style = "transition: 1s";
+                     }, 100);  
+                }, 800);
+
+            }
+        }
+
+    </script>
+</body>
+</html>
