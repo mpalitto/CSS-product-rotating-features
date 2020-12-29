@@ -6,6 +6,8 @@ By clicking on the Features arrows button you can get to a different feature whi
 
 this is part of what I did for learning CSS: followed the [step-by-step video tutorial](https://youtu.be/zxfhf-V4JFQ)
 
+Here is a [working demo](https://mpalitto.github.io/CSS-product-rotating-features/)
+
 Here is what I learned:
 
 ## CSS flexbox
