@@ -10,3 +10,10 @@ Here is what I learned:
 
 ## CSS flexbox
 The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+and a couple of CSS tricks
+
+1. center an element vertically on the page
+2. divide a squared element into 4 equal slices
+
+NOTE: The Javascript code did not work for me as shown in the video, I made it work with some changes...
